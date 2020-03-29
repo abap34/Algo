@@ -1,0 +1,47 @@
+parseInt(x) = parse(Int, x)
+parseMap(x::Array{SubString{String},1}) = map(parseInt, x)
+
+function BinarySearch(A,n,key)
+    left = 1
+    right = n + 1
+    while left < right
+        mid = (left + right) ÷ 2
+        if A[mid] == key
+            return mid
+        elseif key < A[mid]
+            right = mid
+        else
+            left = mid + 1
+        end
+        println(mid)
+    end
+end
+
+function bit_search(x)  #bit全探索
+    count_pettern = x ^ 2
+    b = []
+    for i in 0:count_pettern - 1
+        bit = bin(i, x)
+        bits = []
+        for j in 1:x
+            push!(bits, bit[j])
+        end
+        bits = [bits .== '1']
+        push!(b, bits)
+    end
+    return  b
+end
+ 
+
+
+function arrayprinter(A::AbstractArray)
+    for a in A
+        print(a)
+        print(" ")
+    end
+    print('\n')
+end
+
+function get_digits(n)
+    Int(floor(log10(n) + 1))
+end
