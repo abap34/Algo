@@ -7,3 +7,7 @@ cpp/MyTest/mytest.cpp
 cpp/MyTest/slice_fun
 cpp/MyTest/slice_fun.cpp
 input.txt
+MyTest/MOD_SUM_benchmark.jl
+MyTest/MOD_SUM_test.jl
+cpp/MyTest/RangeClass.cpp
+.vscode/settings.json
