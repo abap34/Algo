@@ -12,3 +12,4 @@ MyTest/MOD_SUM_test.jl
 cpp/MyTest/RangeClass.cpp
 .vscode/settings.json
 *.ipynb
+*.txt
