@@ -15,3 +15,9 @@ cpp/MyTest/RangeClass.cpp
 *.txt
 cpp/ABC/A-144.cpp
 cpp/ABC/A-144
+MyTest/mytest22
+MyTest/mytest22.cpp
+MyTest/mytest22.dSYM/Contents/Info.plist
+MyTest/mytest22.dSYM/Contents/Resources/DWARF/mytest22
+MyTest/tempCodeRunnerFile.cpp
+cpp/mylibraly.cpp
