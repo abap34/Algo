@@ -56,7 +56,7 @@ int main(){
         //cout << "honest count:" << honest_count << endl;
         //cout << "=====" << endl;
 
-        if (max_honest < honest_count) max_honest = honest_count;
+        max_honest = max(max_honest,honest_count);
     }
     cout << max_honest << endl;
 
