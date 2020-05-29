@@ -24,3 +24,6 @@ cpp/mylibraly.cpp
 
 cpp/ABC/.vscode/settings.json
 *.xml
+*.xml
+realtime/.idea/inspectionProfiles/profiles_settings.xml
+*.xml
