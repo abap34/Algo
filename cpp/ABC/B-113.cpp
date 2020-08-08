@@ -5,17 +5,26 @@ using namespace std;
 using BigInt = long long;
 #define ALL(a)  (a).begin(),(a).end()
 
+double getTemp(int x, int T) {
+    return (T - (double)x * 0.006);
+}
+
+
 int main(){
-    int N,T,A;
+    int N, T, A;
     cin >> N;
-    vector<int> H(N);
     cin >> T >> A;
-    rep(i,N) cin >> H[i];
-    BigInt err = 10000000000;
-    int ans;
-    for (int j = 0; j < N; j++){
-        int tmp = T - H[j] * 0.006;
-        if (err > abs(A - tmp)) ans = j + 1;
+    vector<int> H(N);
+    rep(i, N) cin >> H[i];
+    double a = 1000000;
+    double b;
+    int ans_idx;
+    rep(i, N) {
+        b = abs(A - getTemp(H[i], T));
+        if (a > b){
+            ans_idx = i + 1;
+            a = b;
+        }
     }
-    cout << ans << endl;
+    cout << ans_idx << endl;
 } 
