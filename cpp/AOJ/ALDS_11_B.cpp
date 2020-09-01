@@ -58,3 +58,4 @@ int main(){
         cout << i + 1 << " " << d[i] << " " << f[i] << endl;
     }
 }
+

@@ -34,12 +34,12 @@ end
 
 function main()
 
-N, K = parseMap(split(readline()))
+    N, K = parseMap(split(readline()))
 
-A = parseMap(split(readline()))
+    A = parseMap(split(readline()))
 
 
-print_ans(solve(N, K, A))
+    print_ans(solve(N, K, A))
 
 end
 
