@@ -5,17 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "g++ - アクティブ ファイルのビルドとデバッグ",
+            "name": "g++-9 - アクティブ ファイルのビルドとデバッグ",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args":[],
+            "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "preLaunchTask": "g++ build active file"
+            "preLaunchTask": "C/C++: g++-9 build active file"
         }
     ]
 }
