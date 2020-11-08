@@ -22,4 +22,3 @@ if a == -1
 else
     println("$a $b")
 end
-
