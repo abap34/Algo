@@ -7,3 +7,13 @@ void cout2darr(vector<vector<T>> A){
         cout << endl;
     }
 }
+
+
+template <typename T, T2>
+void coutmap(map<T, T2> M){
+    for (auto p : M){
+        cout << p.first << " => " << p.second;
+    }
+}
+
+
