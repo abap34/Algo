@@ -1,5 +1,7 @@
 parseInt(x) = parse(Int, x)
 parseMap(x::Array{SubString{String},1}) = map(parseInt, x)
+
+
 struct Permutations{T}
     a::T
     t::Int
