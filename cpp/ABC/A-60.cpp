@@ -6,6 +6,7 @@ using Graph = vector<vector<int>>;
 #define ALL(a)  (a).begin(),(a).end()
 
 
+
 int main(){
     string A, B, C;
     cin >> A >> B >> C;

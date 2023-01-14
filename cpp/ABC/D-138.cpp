@@ -52,6 +52,7 @@ int main()
     dfs(G, 0, -1);
     for (int n: counter){
         cout << n << " ";
+        //
     }
     cout << "\n";
 }
