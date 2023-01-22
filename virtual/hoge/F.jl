@@ -13,6 +13,15 @@ function inversion(A::AbstractArray{T}) where T
     return result
 end
 
+
+function inversion(A, B)
+    N = length(B)
+    A_replaced = replace(A, (i -> (B[i] => i)).(1:N)...)
+    return inversion(A_replaced)
+end
+
+
+
 function solve(N, B)
     init_max_idx = argmax(B)
     # split
@@ -145,14 +154,29 @@ function naive(N, B)
     return result
 end
 
+function naive2(N, B)
+    max_b = maximum(B)
+    result_table = Dict{Int, Int}()
+    init_max_idx = argmax(B)
+    for i in 1:N
+        target_B = [B[1:i-1]..., max_b, B[i+1:end]...]
+        result_table[i] = inversion(B, target_B)
+    end
+    result = sort(collect(result_table), by = x->x[1])
+    return result
+end
+
+
 function main()
     N = parse(Int, readline())
     B = parse.(Int, split(readline()))
     ans_solve = solve(N, B)
-    ans_naive = solve(N, B)
+    ans_naive = naive(N, B)
+    ans_naive2 = naive2(N, B)
     @show ans_solve == ans_naive
     println("ans from solve:", ans_solve)
     println("ans from naive:", ans_naive)
+    println("ans from naive2:", ans_naive)
 end
 
 

@@ -367,7 +367,6 @@ function solve(N, B)
         m = left_rank[max_idx]
         right_len = N - max_idx 
         current_ans = current_ans + (right_len - n) - (max_idx - m) + 1
-
         if current_ans < ans
             ans = current_ans
         end
