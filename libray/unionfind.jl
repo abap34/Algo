@@ -4,7 +4,7 @@ struct UnionFind
     UnionFind(N) = new(collect(1:N), collect(1:N))
 end
 
-function root(uf::UnionFind, x::Int)
+function root!(uf::UnionFind, x::Int)
     if uf.par[x] == x
         return x
     else
@@ -13,11 +13,11 @@ function root(uf::UnionFind, x::Int)
 end
 
 
-function issame(uf::UnionFind, x::Int, y::Int)
+function issame!(uf::UnionFind, x::Int, y::Int)
     return root(uf, x) == root(uf, y)
 end
 
-function unite(uf::UnionFind, x::Int, y::Int)
+function unite!(uf::UnionFind, x::Int, y::Int)
     x = root(uf, x)
     y = root(uf, y)
     (x == y) && (return true)
@@ -31,3 +31,12 @@ function unite(uf::UnionFind, x::Int, y::Int)
     return true
 end
 
+function n_cluster(uf::UnionFind)
+    r = 0
+    for i in 1:length(uf.size)
+        if roor(uf, i) == i
+            r += 1
+        end
+    end
+    return r
+end

@@ -1,0 +1,14 @@
+digraph g {
+            graph [
+                size="10,5"
+                labelloc="t";
+            ];
+
+5 -> 2 [dir=none] 
+2 -> 4 [dir=none] 
+5 -> 7 [dir=none] 
+7 -> 6 [dir=none] 
+7 -> 8 [dir=none] 
+8 -> 10 [dir=none] 
+
+            }
