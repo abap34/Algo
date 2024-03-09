@@ -43,3 +43,35 @@ struct LCA
         return new(parent, dist, depth, K, V)
     end
 end
+
+
+function query(lca::LCA, u::Int, v::Int)
+    K = length(lca.parent)
+
+    if lca.depth[u] < lca.depth[v]
+        u, v = v, u
+    end
+
+
+    diff = lca.depth[u] - lca.depth[v]
+
+    for k in 0:K-1
+        if (diff >> k) & 1 == 1
+            u = lca.parent[k+1][u]
+        end
+    end
+
+
+    if u == v
+        return u
+    end
+
+    for k in K:-1:1
+        if lca.parent[k][u] != lca.parent[k][v]
+            u = lca.parent[k][u]
+            v = lca.parent[k][v]
+        end
+    end
+
+    return lca.parent[1][u]
+end
