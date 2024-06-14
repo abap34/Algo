@@ -141,6 +141,42 @@ function scc(graph::Graph)
     return graphs
 end
 
+function cycle(graph::Graph)
+    N = vertex_count(graph)
+    visited = zeros(Bool, N)
+    stack = []
+    path = []
+    cycle = []
+    found = false
+
+    function dfs(v::Int, g::Graph)
+        visited[v] = true
+        push!(stack, v)
+        push!(path, v)
+        for to in g.adjancency_dict[v]
+            if !visited[to]
+                dfs(to, g)
+            elseif to == path[1]
+                found = true
+                cycle = copy(path)
+            end
+        end
+        pop!(path)
+        pop!(stack)
+    end
+
+    for v in 1:N
+        if !visited[v]
+            dfs(v, graph)
+            if found
+                break
+            end
+        end
+    end
+
+    return cycle
+end
+
 
 function main()
     N = parse(Int, readline())
@@ -153,19 +189,12 @@ function main()
 
     sccs = scc(G)
 
-    graphviz(sccs)
-
-    assign = zeros(Int, N)
-    for (i, g) in enumerate(sccs)
-        for v in g.vertices
-            assign[v] = i
-        end
-    end
-
-    sizes = [vertex_count(g) for g in sccs]
-
     s = 0
 
+    for g in sccs
+        s     
+    end
+    
     
 end
 
